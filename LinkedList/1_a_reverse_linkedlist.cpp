@@ -1,39 +1,26 @@
-#include <bits/stdc++.h>
+// Online C++ compiler to run C++ program online
+#include <iostream>
 using namespace std;
 
-// Iterative approach :
-
-struct ListNode
+int main()
 {
-    int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
-
-class Solution
-{
-public:
-    ListNode *reverseList(ListNode *head)
+    int n = 50;
+    cout << "start" << endl;
+    for (int i = 0; i < n; i++)
     {
-
-        if (head == NULL || head->next == NULL)
-            return head;
-
-        ListNode *prev = NULL;
-        ListNode *curr = head;
-        ListNode *next = NULL;
-
-        while (curr != NULL)
+        for (int j = 0; j < n + i; j++)
         {
-
-            next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
+            if (j < n - 1 - i)
+            {
+                cout << " ";
+            }
+            else
+            {
+                cout << "*";
+            }
         }
-
-        return prev;
+        cout << endl;
     }
-};
+
+    return 0;
+}
