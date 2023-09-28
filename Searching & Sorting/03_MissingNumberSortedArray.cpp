@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 
+// if difference between an element and its index is 1 so move right else move left
 int missingElement(vector<int> &v)
 {
 
@@ -32,7 +33,7 @@ int missingElement(vector<int> &v)
 int main()
 {
 
-    vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8};
+    vector<int> v = {1, 2, 3, 5, 6, 7, 8};
     cout << "Missing number is : " << missingElement(v) << endl;
 
     return 0;

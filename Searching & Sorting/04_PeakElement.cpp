@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+// if v[m+1] > v[m] -> move right else if v[m+1] < v[m] store the ans and movve left for further possibilities 
+
 int peakElement(vector<int> &v)
 {
 

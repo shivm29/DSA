@@ -3,6 +3,9 @@
 #include <vector>
 using namespace std;
 
+// ROTATED ARRAY :  
+// pivot element k left aur right mein sorted arrays rehti hai
+
 // approach by me
 int pivotElement(vector<int> &v)
 {
@@ -26,7 +29,7 @@ int pivotElement(vector<int> &v)
 
     return -1;
 }
-
+// 12, 16, 144, 1, 2, 3, 4
 // approach by codehelp
 int pivotElementII(vector<int> &v)
 {

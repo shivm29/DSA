@@ -2,51 +2,49 @@
 #include <vector>
 using namespace std;
 
-// Other approaches : XOR | Count numbers | Sorting
-
 int oddOccuringElement(vector<int> &nums)
 {
-    int s = 0, e = nums.size() - 1;
-    int mid = s + (e - s) / 2; // 4
     int ans = -1;
+
+    int s = 0, e = nums.size() - 1;
+    int m = s + (e - s) / 2;
+
     while (s <= e)
     {
-        if(s == e) {
+        if (s == e)
+        {
             return nums[s];
         }
-        // if index is even :
         
-        if (mid % 2 == 0)
+        if (m % 2 == 1)
         {
-            if (mid < nums.size() - 2 && nums[mid] == nums[mid + 1])
+            if (m - 1 >= 0 && nums[m - 1] == nums[m])
             {
-                s = mid + 2; // 4
+                s = m + 1;
             }
             else
             {
-                ans = nums[mid]; // 2
-                e = mid;         // 4
+                e = m - 1;
             }
         }
         else
         {
-            if (mid >= 1 && nums[mid] == nums[mid - 1])
+            if (m + 1 <= nums.size() && nums[m] == nums[m + 1])
             {
-                s = mid + 1;
+                s = m + 2;
             }
             else
             {
-                e = mid - 1;
+                ans = nums[m];
+                e = m;
             }
         }
 
-        mid = s + (e - s) / 2; // 2
+        m = s + (e - s) / 2;
     }
 
     return ans;
 }
-
-// ans = 2
 
 int main()
 {
