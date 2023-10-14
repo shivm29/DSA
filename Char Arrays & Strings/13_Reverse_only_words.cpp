@@ -1,9 +1,12 @@
-#include <iostream>
-#include <string>
-#include <vector>
+// https://leetcode.com/problems/reverse-only-letters/description/
+//  Amazon 
+#include<iostream>
+#include<string>
+#include<vector>
 #include<unordered_map>
 #include<algorithm>
 using namespace std;
+
 
 string reverseOnlyLetters(string s) {
     unordered_map<int, string> map;
@@ -19,11 +22,6 @@ string reverseOnlyLetters(string s) {
             erased++; // 1
         }
     }
-    
-    for(auto ch:map ) {
-        cout << ch.first << " " << ch.second << endl;
-    }
-
     reverse(s.begin(), s.end());
 
     for(int i = 0; i < initialLength; i++) {
@@ -35,12 +33,8 @@ string reverseOnlyLetters(string s) {
     return s;
 }
 
+int main() {
 
-int main(){
 
-    cout << reverseOnlyLetters("Test1ng-Leet=code-Q!");
-   
     return 0;
 }
-
-// 28_]

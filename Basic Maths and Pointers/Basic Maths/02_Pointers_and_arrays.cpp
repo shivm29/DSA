@@ -5,43 +5,45 @@ int main()
 {
 
     int arr[6] = {1, 2, 3, 4, 5, 6};
-    int *ptr = arr;
+    int *ptr1 = arr;
 
-    cout << arr << endl;
-    cout << arr[0] << endl;
-    cout << &arr << endl;
-    cout << ptr << endl;
-    cout << &ptr << endl;
-    cout << *ptr << endl;
+    cout << "arr => " << arr << endl;
+    cout << "arr[0] => " << arr[0] << endl;
+    cout << "&arr => " << &arr << endl;
+    cout << "ptr1 => " << ptr1 << endl;
+    cout << "&ptr1 => " << &ptr1 << endl;
+    cout << "*ptr1 => " << *ptr1 << endl;
+    cout << endl;
 
-    char ch[50] = "shivam";
-    char *cptr = ch;
+    // char ch[50] = "shivam";
+    // char *ptr = ch;
 
-    cout << ch << endl;
-    cout << ch[0] << endl;
-    cout << &ch << endl;
-    cout << &ch[0] << endl;
-    cout << cptr << endl;
-    cout << *cptr << endl; // because *cptr = *(cptr+0) = cptr[0] = s
-    cout << &cptr << endl;
+    // cout << "ch => " << ch << endl;
+    // cout << "&ch => " << &ch << endl;
+    // cout << "ch[0] => " << ch[0] << endl; // because ch[0] = *ch => *(ch + 0) i.e. ch[0]
+    // cout << "ptr => " << ptr << endl;
+    // cout << "&ptr => " << &ptr << endl;
+    // cout << "*ptr => " << *ptr << endl;
 
-    char c[30] = "statement";
-    char *cptr2 = &c[0];
+    char ch[40] = "statement";
+    char * cptr = &ch[0];
 
-    cout << c << endl; // statement
-    cout << &c << endl;// address of c
-    cout << *(c + 3) << endl; // t, because *(c+3) = c[3] 
-    cout << cptr2 << endl; // statement
-    cout << &cptr2 << endl; // address of cptr2
-    cout << *(cptr2 + 3) << endl; // t
-    cout << cptr2 + 2 << endl; 
-    cout << *cptr2 << endl;
-    cout << cptr2 + 8 << endl;
+    cout << "ch => " << ch << endl; // statement
+    cout << "&ch => " << &ch << endl; // address of ch
+    cout << "*(ch + 3) => " << *(ch + 3) << endl; // t
+    cout << "cptr => " << cptr << endl; //  statement
+    cout << "cptr + 2 => " << cptr + 2 << endl; //  atement
+    cout << "cptr + 8 => " << cptr + 8 << endl; //  atement
+    cout << "&cptr => " << &cptr << endl; // address of cptr
+    cout << "*cptr => " << *cptr << endl; // s (because *(cptr) = *(cptr+0) = ch[0])
+    cout << "*(cptr+3) => " << *(cptr + 3) << endl; // t
+    cout << "*(cptr+3) => " << *(cptr + 3) << endl; // t
+    cout << endl;
 
-    char character = 'a';
-    char * charptr = &character;
+    char abc = 'a';
+    char *abcptr = &abc;
 
-    cout << charptr; // prints random chars until null char is found
+    cout << abcptr;
 
     return 0;
 }
