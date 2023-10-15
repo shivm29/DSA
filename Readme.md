@@ -8,9 +8,9 @@
 <!-- Arrays -->
 <!-- 1. First repeating element -->
 <!-- 2. Common element in 3 sorted array -->
-3. Factorial of a large number
-4. Remove duplicates from sorted array
-5. Maximum average subarray
+<!-- 3. Factorial of a large number -->
+<!-- 4. Remove duplicates from sorted array -->
+<!-- 5. Maximum average subarray -->
 
 
 <!-- Searching & Sorting -->
@@ -31,8 +31,8 @@
 <!-- 1. Valid Anagram -->
 <!-- 2. Reverse Only Letters -->
 <!-- 3. Longest Common Prefix --> Look for efficient approach
-4. Reverse Vowels of a String
-5. Isomorphic Strings
+<!-- 4. Reverse Vowels of a String -->
+<!-- 5. Isomorphic Strings -->
 6. Reorganise String
 7. Group Anagrams
 8. Longest Palindromic Substring 
@@ -51,3 +51,7 @@
 2. Find out the time complexities of find() erase() etc..
 3. What happens inside the custom comparator
 4. Solve 08 & 09 by your own
+
+
+<!-- Leetcode Contest -->
+1. Longest unequal adjacent groups subsequence ii
