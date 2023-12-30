@@ -4,8 +4,10 @@
 3. Optimizing Sieve and Segmented Sieve
 4. Pointers II Lecture 30 min left
 5. Time and Space complexity of Recursion
-6. Backtracking & DnC Lecture 1  
+6. Time complexity of Merge sort 
 7. Backtracking & DnC Lecture 2  
+8. Quick sort end element as pivot
+9. Recursion marathon
 
 <!-- Arrays -->
 <!-- 1. First repeating element -->

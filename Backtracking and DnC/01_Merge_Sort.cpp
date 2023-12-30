@@ -1,86 +1,103 @@
 #include <iostream>
 using namespace std;
 
-void merge(int A[], int N, int s, int e) {
+// 0 2 
+// 0 1 
 
-    if(s <= e) return;
+int inversionCount = 0;
+
+void merge(int arr[], int s, int e) {
+    // if (s >= e) return;
 
     int mid = s + (e-s)/2;
-    
-    int leftLen = mid - s + 1;
-    int rightLen = e - mid;
+    int leftLength = mid - s + 1;
+    int rightLength = e - mid;
 
-    // create left and right array : 
-    int *left = new int[leftLen];
-    int *right = new int[rightLen];
+    int *left = new int[leftLength];
+    int *right = new int[rightLength];
+    
 
     int k = s;
-
-    for(int i=0; i<leftLen; i++) {
-        left[i] = A[k];
+    for(int i=0; i<leftLength; i++) {
+        left[i] = arr[k];
         k++;
     }
-
     k = mid+1;
-
-    for(int i=0; i<rightLen; i++) {
-        right[i] = A[k];
+    for(int i=0; i<rightLength; i++) {
+        right[i] = arr[k];
         k++;
     }
 
-    // left and right arrays are already sorted
-    int leftIndex = 0;
-    int rightIndex = 0;
-    // for main array : 
-    int mainIndex = s;
-
-    while(leftIndex < leftLen && rightIndex < rightLen) {
-        if(left[leftIndex] < right[rightIndex]) {
-            A[mainIndex] = left[leftIndex];
-            leftIndex++;
-            mainIndex++;
+    // count inversions : 
+    int l = 0, r = 0;
+    while(r < rightLength && l < leftLength) {
+        if(right[r] < left[l]){
+            inversionCount += leftLength-l;
+            r++;
+            
         }
         else {
-            A[mainIndex] = right[rightIndex];
-            rightIndex++;
-            mainIndex++;
+            l++;
         }
     }
 
-    while(leftIndex < leftLen) {
-        A[mainIndex] = left[leftIndex];
-        leftIndex++;
-        mainIndex++;
-    }
-    while(rightIndex < rightLen) {
-        A[mainIndex] = right[rightIndex];
-        rightIndex++;
-        mainIndex++;
+    int leftIndex = 0, rightIndex = 0, mainIndex = s;
+
+
+
+    while(leftIndex < leftLength && rightIndex < rightLength) {
+        if(left[leftIndex] < right[rightIndex]) {
+            arr[mainIndex] = left[leftIndex];
+            mainIndex++;
+            leftIndex++;
+        }
+        else {
+            arr[mainIndex] = right[rightIndex];
+            mainIndex++;
+            rightIndex++;
+        }
     }
 
+    while(leftIndex < leftLength) {
+        arr[mainIndex] = left[leftIndex];
+        mainIndex++;
+        leftIndex++;
+    }
+
+    while (rightIndex < rightLength)
+    {
+        arr[mainIndex] = right[rightIndex];
+        mainIndex++;
+        rightIndex++;
+    }
+
+    delete[] left;
+    delete[] right;
+
+    return;
 }
 
-void mergeSort(int A[], int N, int s, int e) {
-    // base case : [if array is of 0 or 1 size that's already sorted]
-    if(s <= e) return;
+void mergeSort(int arr[], int s, int e) {
+    if(s >= e) return;
 
     int mid = s + (e-s)/2;
-    // for left part
-    mergeSort(A, N, s, mid);
-    // for right part
-    mergeSort(A, N, mid+1, e);
 
-    return merge(A,N, s, e);
+    mergeSort(arr, s, mid);
+    mergeSort(arr, mid+1, e);
+
+    merge(arr, s, e);
 }
 
 int main() {
 
-    int arr[] = {5, -3, 44, -7, 8};
-    mergeSort(arr, 5, 0,4);
+    int arr[] = {5,4,3,2,1,0};
+    mergeSort(arr, 0,5);
 
-    for(int i=0; i<5; i++) {
+    for(int i=0; i<6; i++) {
         cout << arr[i] << " ";
     }
+
+    cout << "inversion count : " << inversionCount << endl;
 
     return 0;
 }
